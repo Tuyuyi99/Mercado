@@ -18,7 +18,7 @@ import models.Producto;
 @WebServlet("/Controlador")
 public class Controlador extends HttpServlet {
 	
-	String listar = "views/listar.jsp";
+	String index = "index.jsp";
 	String add = "views/agregar.jsp";
 	String edit = "views/editar.jsp";
 	Producto p = new Producto();
@@ -43,13 +43,13 @@ public class Controlador extends HttpServlet {
 		String action = request.getParameter("accion");
 		if (action.equalsIgnoreCase("listar")) {
 			
-			acceso = listar;
+			acceso = index;
 			
 		} else if(action.equalsIgnoreCase("add")) {
 			
 			acceso = add;
 			
-		} else if(action.equalsIgnoreCase("agregar")) {
+		} else if(action.equalsIgnoreCase("Agregar")) {
 			
 			String nombre = request.getParameter("nombreForm");
 			String descripcion = request.getParameter("descripcionForm");
@@ -59,17 +59,17 @@ public class Controlador extends HttpServlet {
 			p.setPrecio(precio);
 			dao.add(p);
 			
-			acceso = add;
+			acceso = index;
 			
 		}
 		
 		else if(action.equalsIgnoreCase("editar")) {
-			request.setAttribute("idpro", request.getParameter("id "));
+			request.setAttribute("idpro", request.getParameter("id"));
 			
 			acceso = edit;
 		}
 		
-		else if (action.equalsIgnoreCase("actualizar")) {
+		else if (action.equalsIgnoreCase("Actualizar")) {
 			id = Integer.parseInt(request.getParameter("txtid"));
 			String nombre = request.getParameter("nombreForm");
 			String descripcion = request.getParameter("descripcionForm");
@@ -80,8 +80,15 @@ public class Controlador extends HttpServlet {
 			p.setPrecio(precio);
 			dao.edit(p);
 			
-			acceso = edit;
+			acceso = index;
 			
+		} else if(action.equalsIgnoreCase("eliminar")) {
+			id = Integer.parseInt(request.getParameter("id"));
+			p.setId(id);
+			dao.delete(id);
+			
+			
+			acceso = index;
 		}
 		
 		

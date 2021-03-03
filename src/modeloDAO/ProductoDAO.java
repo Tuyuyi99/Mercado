@@ -44,7 +44,6 @@ public class ProductoDAO implements CRUD{
 
 	@Override
 	public Producto list(int id) {
-		ArrayList<Producto>list = new ArrayList<>();
 		String sql = "SELECT * FROM producto WHERE id = " + id ;
 		try {
 			con = cn.getConnection();
@@ -52,11 +51,10 @@ public class ProductoDAO implements CRUD{
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
+				p.setId(rs.getInt("id"));
 				p.setNombre(rs.getString("nombre"));
 				p.setDescripcion(rs.getString("descripcion"));
 				p.setPrecio(rs.getString("precio"));
-				
-				list.add(p);
 			}
 			
 		} catch (Exception e) {
@@ -106,6 +104,19 @@ public class ProductoDAO implements CRUD{
 
 	@Override
 	public boolean delete(int id) {
+		String sql = "DELETE FROM producto WHERE id = " + id;
+		
+		try {
+			
+			con = cn.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.executeUpdate();
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			
+		}
 		return false;
 	}
 
