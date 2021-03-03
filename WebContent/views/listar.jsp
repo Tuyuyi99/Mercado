@@ -8,11 +8,12 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Productos</title>
 	</head>
 	<body>
 		<div>
 			<h1>Productos</h1>
+			<a href="Controlador?accion=agregar">Agregar nuevo producto</a>
 			<table border="1">
 				<thead>
 					<tr>
@@ -37,7 +38,7 @@
 						<td><%= pro.getNombre() %></td>
 						<td><%= pro.getDescripcion() %></td>
 						<td><%= pro.getPrecio() %></td>
-						<td><a>Editar</a></td>
+						<td><a href="Controlador?accion=editar&id=<%= pro.getId() %>">Editar</a></td>
 						<td><a>Eliminar</a></td>
 					</tr>
 					<%

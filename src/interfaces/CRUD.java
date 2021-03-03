@@ -6,8 +6,8 @@ import models.Producto;
 public interface CRUD {
 
 	public List listar();
-	public Producto list(String nombre);
+	public Producto list(int id);
 	public boolean add(Producto pro);
 	public boolean edit(Producto pro);
-	public boolean delete(String nombre);
+	public boolean delete(int id);
 }

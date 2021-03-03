@@ -4,12 +4,12 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Mercado</title>
 	</head>
 	<body>
 	
 		<div>
-			<a href="Controlador?accion=listar">Listar productos</a>
+			<a href="Controlador?accion=listar">Listar productos</a> <br>
 		</div>
 
 	</body>

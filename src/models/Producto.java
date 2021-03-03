@@ -1,12 +1,12 @@
 package models;
 
 public class Producto {
-
+	int id;
 	String nombre;
 	String descripcion;
-	double precio;
+	String precio;
 	
-	public Producto(String nombre, String descripcion, double precio) {
+	public Producto(String nombre, String descripcion, String precio) {
 		super();
 		this.nombre = nombre;
 		this.descripcion = descripcion;
@@ -17,7 +17,7 @@ public class Producto {
 		super();
 	}
 
-	public Producto(String nombre, double precio) {
+	public Producto(String nombre, String precio) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
@@ -39,16 +39,23 @@ public class Producto {
 		this.descripcion = descripcion;
 	}
 
-	public double getPrecio() {
+	public String getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
+	public void setPrecio(String precio) {
 		this.precio = precio;
 	}
-	
-	
-	
 
-	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 }
+	
+	
