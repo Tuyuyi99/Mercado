@@ -25,7 +25,7 @@
 				  <span class="input-group-text">Precio</span>
 					<input class="form-control" type="text" name="precioForm"><br>
 				</div>
-						<input type="submit" class="btn btn-outline-success" name="accion" value="Agregar">
+				<input type="submit" class="btn btn-outline-success" name="accion" value="Agregar">
 			</form>
 		</div>										
 	</body>

@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div>
-			<h1>Productos</h1>
+			<h1 class="d-flex justify-content-center">Mercado Asindado</h1>
 			<table border="1" class="table table-striped table-hover">
 				<thead class="table thead-dark">
 					<tr>
